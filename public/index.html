@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <section id="loginSection" class="panel">
+      <h1>Task Manager</h1>
+      <p>Entre para organizar suas tarefas.</p>
+      <form id="login-form" data-testid="login-form">
+        <label for="username">Usuário</label>
+        <input id="username" data-testid="username" autocomplete="username" required>
+        <label for="password">Senha</label>
+        <input id="password" data-testid="password" type="password" autocomplete="current-password" required>
+        <button type="submit" data-testid="login-button">Entrar</button>
+        <p id="login-error" role="alert"></p>
+      </form>
+      <small>Usuário de demonstração: aluno / playwright123</small>
+    </section>
+
+    <section id="appSection" class="panel" hidden>
+      <header class="topbar">
+        <div>
+          <h1>Minhas tarefas</h1>
+          <p>Bem-vindo, <strong id="welcomeName" data-testid="welcomeName"></strong>!</p>
+        </div>
+        <button id="logout-button" class="secondary">Sair</button>
+      </header>
+
+      <div class="counts">
+        <div class="count-card">Total <strong data-testid="total-count">0</strong></div>
+        <div class="count-card">Concluídas <strong data-testid="completed-count">0</strong></div>
+      </div>
+
+      <form id="task-form">
+        <h2 id="form-title">Adicionar tarefa</h2>
+        <label for="task-title">Título</label>
+        <input id="task-title" data-testid="task-title" placeholder="Ex.: Estudar Playwright">
+        <label for="task-description">Descrição</label>
+        <textarea id="task-description" data-testid="task-description" placeholder="Detalhes da tarefa"></textarea>
+        <label for="task-priority">Prioridade</label>
+        <select id="task-priority" data-testid="task-priority">
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+        </select>
+        <p id="formError" data-testid="formError" role="alert"></p>
+        <button type="submit" data-testid="save-task-button">Salvar tarefa</button>
+      </form>
+
+      <div class="filter-row">
+        <label for="status-filter">Filtrar:</label>
+        <select id="status-filter" data-testid="status-filter">
+          <option value="Todas">Todas</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Concluída">Concluída</option>
+        </select>
+      </div>
+
+      <ul id="task-list"></ul>
+      <p id="empty-state" data-testid="empty-state">Nenhuma tarefa cadastrada.</p>
+    </section>
+  </main>
+</body>
+</html>

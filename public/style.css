@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #eef3fb; color: #1f2937; }
+.container { width: min(760px, 92%); margin: 42px auto; }
+.panel { background: white; padding: 28px; border-radius: 14px; box-shadow: 0 8px 28px #1e3a8a18; }
+h1 { margin-top: 0; color: #1d4ed8; }
+h2 { font-size: 20px; margin-bottom: 14px; }
+label { display: block; margin: 12px 0 6px; font-weight: 600; }
+input, textarea, select { width: 100%; padding: 11px; border: 1px solid #cbd5e1; border-radius: 7px; font: inherit; }
+textarea { min-height: 70px; resize: vertical; }
+button { border: 0; border-radius: 7px; padding: 11px 16px; margin-top: 14px; background: #2563eb; color: white; cursor: pointer; font-weight: 600; }
+button:hover { background: #1d4ed8; }
+button.secondary { background: #64748b; }
+#login-error, #formError { color: #dc2626; min-height: 18px; }
+small { display: block; margin-top: 18px; color: #64748b; }
+[hidden] { display: none !important; }
+.topbar, .filter-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.topbar p { margin-bottom: 0; }
+.counts { display: flex; gap: 12px; margin: 24px 0; }
+.count-card { flex: 1; background: #eff6ff; padding: 16px; border-radius: 9px; }
+.count-card strong { display: block; font-size: 25px; color: #1d4ed8; }
+#task-list { list-style: none; padding: 0; }
+.task-item { border: 1px solid #e2e8f0; border-radius: 9px; padding: 14px; margin: 10px 0; }
+.task-item.done .task-name { text-decoration: line-through; color: #64748b; }
+.task-name { font-weight: 700; }
+.task-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.task-actions button { margin-top: 10px; }
+.task-actions .delete { background: #dc2626; }
+#empty-state { color: #64748b; text-align: center; padding: 14px; }
+@media (max-width: 520px) { .panel { padding: 19px; } .counts { flex-direction: column; } }
